@@ -26,11 +26,10 @@
 
     [contentView addSubview:navigationArea];
 
-    var contentArea = [[CPView alloc] initWithFrame:CGRectMake(150.0, 0.0, CGRectGetWidth([contentView bounds]) - 150.0, CGRectGetHeight([contentView bounds]))];
+    var contentArea = [[CPImageView alloc] initWithFrame:CGRectMake(150.0, 0.0, CGRectGetWidth([contentView bounds]) - 150.0, CGRectGetHeight([contentView bounds]))];
 
     var image = [[CPImage alloc] initWithContentsOfFile:"Resources/cork.jpg" size:CGSizeMake(20, 20)]; 
-    var imageView = [[CPImageView alloc] initWithFrame:CGRectMake(0,0,500,500)];    
-    [contentArea setBackgroundColor:[CPColor colorWithPatternImage:image]];
+    [contentArea setImage:image];
 
     //[contentArea setBackgroundColor:[CPColor greenColor]];
 
