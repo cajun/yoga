@@ -1,6 +1,6 @@
 
 @import <Foundation/CPObject.j>
-
+@import "Desk.j"
 
 @implementation AppController : CPObject
 {
@@ -31,6 +31,8 @@
     [contentArea setAutoresizingMask:CPViewWidthSizable | CPViewHeightSizable];
 
     [contentView addSubview:contentArea];
+
+    [[[Desk alloc] init] orderFront:nil];
 
     [theWindow orderFront:self];
 }
