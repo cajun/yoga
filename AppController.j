@@ -14,11 +14,10 @@
     var theWindow = [[CPWindow alloc] initWithContentRect:CGRectMakeZero() styleMask:CPBorderlessBridgeWindowMask],
         contentView = [theWindow contentView];
 
-    var navigationArea = [[CPView alloc] initWithFrame:CGRectMake(0.0, 0.0, 150.0, CGRectGetHeight([contentView bounds]))];
+    var navigationArea = [[CPImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 200.0, CGRectGetHeight([contentView bounds]))];
 
     var image_nav = [[CPImage alloc] initWithContentsOfFile:"Resources/woody.jpg" size:CGSizeMake(20, 20)]; 
-    var imageView_nav = [[CPImageView alloc] initWithFrame:CGRectMake(0,0,500,500)];
-    [navigationArea setBackgroundColor:[CPColor colorWithPatternImage:image_nav]];
+    [navigationArea setImage:image_nav];
     //[navigationArea setBackgroundColor:[CPColor redColor]];
 
     // This view will grow in height, but stay fixed width attached to the left side of the screen.
@@ -26,7 +25,7 @@
 
     [contentView addSubview:navigationArea];
 
-    var contentArea = [[CPImageView alloc] initWithFrame:CGRectMake(150.0, 0.0, CGRectGetWidth([contentView bounds]) - 150.0, CGRectGetHeight([contentView bounds]))];
+    var contentArea = [[CPImageView alloc] initWithFrame:CGRectMake(200.0, 0.0, CGRectGetWidth([contentView bounds]) - 150.0, CGRectGetHeight([contentView bounds]))];
 
     var image = [[CPImage alloc] initWithContentsOfFile:"Resources/cork.jpg" size:CGSizeMake(20, 20)]; 
     [contentArea setImage:image];
